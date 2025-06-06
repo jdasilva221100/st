@@ -1,0 +1,472 @@
+/*reset basico*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  scroll-margin-top: 6.5rem;
+  /*para que se vea el titulo de la seccion al hacer la navegacion no anda*/
+  
+}
+/* Variables  */
+:root {
+  --gap:1.5rem;
+  --anocho-extra:40%;
+  --txt-principal: "Bebas Neue", sans-serif;
+  --color-principal: #3950a0;
+  --color-tipografia: white;
+  --encabezados: #595959;
+  --parrafos: #555;
+  --fondoPag:#cccccc;
+  --elementos: 3;
+}
+body {
+  font-size: larger;
+  background-color: var(--fondoPag);
+  font-family: var(--txt-principal), sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+/* Contenedor general para centrar el contenido y limitar el ancho a 1280-80 */
+.contenedor {
+  width: 80%;
+  max-width: 1280px;
+  min-width: 720px;
+  margin: 0 auto;
+}
+/* Navegacion */
+#navegacion {
+  position: sticky;
+  top: 0;
+  display: flex;
+  z-index: 1000; /* hace que funcione bine el sticky  nav bar este por encima de otros elementos al hacer scroll */
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: var(--color-principal);
+}
+#navegacion figure {
+  width: 10rem;
+}
+#navegacion figure img {
+  max-width: 100%;
+}
+#navegacion nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+#navegacion nav a {
+  transition: 0.25s ease;
+  color: var(--color-tipografia);
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+#navegacion nav a:hover {
+  background-color:  var(--color-tipografia);
+  color: var(--color-principal);
+}
+#contenido-principal p {
+  margin-bottom: 1.2rem;
+}
+/* Hero Section */
+.hero {
+ flex-direction: column;
+ align-items: center;
+ text-align: center;
+ margin-bottom: 2rem;
+}
+.hero-imagen-contenedor {
+ width: 100%;
+ background-image: url(src/img/banner2.jpg);
+ background-size:cover ;
+ 
+ background-repeat: no-repeat;
+  min-height: 400px; 
+}
+
+.hero-contenido {
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ padding: 1rem;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ width: 80%;
+ max-width: 800px;
+ background-color: rgb(163 157 157 / 40%);
+ border-radius: 0.5rem;
+}
+.hero-titulo {
+ color:var(--color-tipografia);
+ font-size: 3.5rem;
+ margin-bottom: 1rem;
+ text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+.descripcion-producto {
+ color: var(--color-tipografia);
+ font-size: 1.3rem;
+ text-align: center;
+ margin-bottom: 1.5rem;
+}
+#btnComprar {
+ padding: 1rem 2.5rem;
+ background-color: var(--color-principal);
+ color: var(--color-tipografia);
+ border: none;
+ font-family: var(--txt-principal);
+ font-size: 1.5rem;
+ cursor: pointer;
+ transition: background-color 0.3s ease, transform 0.2s ease;
+ border-radius: 0.5rem;
+ text-decoration: none;
+ display: inline-block;
+ text-align: center;
+}
+#btnComprar:hover {
+ background-color: var(--color-tipografia);
+ color: var(--color-principal);
+ transform: scale(1.05);
+}
+/* Titulos de Seccion Generales */
+.titulo-seccion {
+  color: var(--encabezados);
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+/* Seccion de Caracteristicas Principales */
+#contenido-principal-articulos.articulos {
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  background-color: var(--fondoPag);
+  width: 100%;
+}
+.contenedor-caracteristicas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  justify-content: center;
+  max-width: 1280px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 var(--gap);
+}
+#contenido-principal-articulos article {
+  width: calc((100% - ((var(--elementos) - 1) * var(--gap))) / var(--elementos));
+  flex-shrink: 0;
+  background-color: var(--color-tipografia);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: var(--gap);
+}
+#contenido-principal-articulos article figure {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+#contenido-principal-articulos article figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+#contenido-principal-articulos article div {
+  padding: var(--gap);
+  width: 100%;
+}
+#contenido-principal-articulos article div h2 {
+
+  margin-bottom: 0.5rem;
+  color: var(--encabezados);
+  font-size: 1.3em;
+}
+#contenido-principal-articulos article div p {
+  margin-bottom: 0.25rem;
+  color: var(--encabezados);
+  font-size: 0.9em;
+}
+/* Seccionv de Especificaciones Tecnicas */
+.especificaciones-tecnicas {
+  padding: 3rem 1rem;
+  text-align: center;
+  background-image: url(src/img/040125_Quencher_CLP_Lifestyle-Tile_Oasis.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--color-tipografia);
+  margin-bottom: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  max-width: 100%;
+}
+#especificaciones-titulo {
+  color: var(--color-tipografia);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  margin-bottom: 1rem;
+}
+
+.lista-especificaciones-ul {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: rgb(189 171 171 / 60%);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  padding: 0;
+  overflow: hidden;
+}
+
+.lista-especificaciones-ul td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: left;
+  vertical-align: top;
+}
+
+.lista-especificaciones-ul tr:last-child td {
+  border-bottom: none;
+}
+
+.especificacion-titulo {
+  width: 200px;
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  color: var(--color-tipografia);
+}
+
+.especificacion-valor {
+  flex-grow: 1;
+  font-size: 1.1rem;
+  color: var(--color-tipografia);
+}
+/* Sección de Formulario/Nuestra Empresa */
+.diseno-contacto-web {
+  display: flex;
+  background-color: var(--color-tipografia);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 0;
+}
+.contenido-principal-contacto {
+  flex: 2;
+  padding: 30px;
+  border-right: 1px solid var(--color-tipografia);
+}
+.marcador-imagen {
+  width: 100%;
+  height: 280px;
+  background-image: url(src/img/bannerdeNuestraEmpresa.jpg);
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  color: var(--elementos);
+  font-size: 1.2em;
+}
+.nuestra-empresa h2 {
+  color: var(--encabezados);
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+.parrafo-empresa {
+  color: var(--parrafos);
+  line-height: 1.7;
+  font-size: 1.1em;
+}
+.barra-lateral-contacto {
+  flex: 1;
+  padding: 30px;
+  background-color: var(--color-principal);
+  flex-direction: column;
+  justify-content: center;
+}
+.formulario-compra {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+span {
+  color: #ee4a4a;
+}
+.titulo-seccion-formulario {
+  color: var(--color-tipografia);
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  text-align: center;
+}
+.grupo-formulario {
+  margin-bottom: 0;
+}
+.grupo-formulario label {
+  margin-bottom: 8px;
+  color: var(--color-tipografia);
+  font-weight: bold;
+  font-size: 1em;
+}
+.grupo-formulario input[type="text"],
+.grupo-formulario input[type="email"],
+.grupo-formulario select {
+  width: 100%;
+  padding: 1rem;
+  border: 0.2rem solid var(--parrafos);
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  color: var(--parrafos);
+  font-family: sans-serif;
+}
+.grupo-formulario input[type="text"]::placeholder,
+.grupo-formulario input[type="email"]::placeholder,
+.grupo-formulario select {
+  color: var(--color-principal);
+}
+.grupo-formulario input[type="text"]:focus,
+.grupo-formulario input[type="email"]:focus,
+.grupo-formulario select:focus {
+  outline: none;
+  border-color: var(--color-principal);
+  box-shadow: 0 0 0 2px var(--color-tipografia);
+}
+.opciones-genero label {
+  display: inline;
+  margin-right: 20px;
+  font-weight: normal;
+  font-size: 1em;
+  color: var(--color-tipografia);
+}
+.grupo-checkbox {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.grupo-checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--fondoPag);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+.grupo-checkbox input[type="checkbox"]:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+.grupo-checkbox input[type="checkbox"]:checked::after {
+  font-size: 14px;
+  color: var(--color-tipografia);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.grupo-checkbox label {
+  font-weight: normal;
+  cursor: pointer;
+  font-size: 1em;
+  color: var(--color-tipografia);
+  margin-left: 0;
+}
+.boton-comprar {
+  background-color: var(--color-principal);
+  color: var(--color-tipografia);
+  padding: 14px 25px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2em;
+  width: auto;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: var(--txt-principal);
+  margin-top: 0;
+}
+.boton-comprar:hover {
+  background-color: var(--color-tipografia);
+  color: var(--color-principal);
+  transform: scale(1.02);
+}
+/* galeria */
+.galeria {
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+figcaption{
+  color: #333;
+}
+.galeria .contenedor-galeria {
+  --gap:1.5rem;
+  --anocho-extra:50%;
+    display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+.galeria .contenedor-galeria figure{
+  width: calc((100% - (var(--gap) *2) - var(--anocho-extra))/2);
+}
+.galeria .contenedor-galeria figure.img2{
+  width: var(--anocho-extra);
+}
+.galeria .contenedor-galeria figure img{
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+}
+/* Footer */
+footer {
+  background-color: #333;
+  color: var(--color-tipografia);
+  padding: 1rem 0;
+  bottom: 0;
+  text-align: center;
+}
+.pie-pagina {
+  display:flex;
+  flex-direction: initial;
+  gap: 1rem;
+}
+.logo-pie img {
+  width: 8rem;
+}
+.derechos-reservados {
+  font-size: 0.9rem;
+  color: var(--fondoPag);
+}
+.politica-privacidad {
+  color: var(--fondoPag);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+.politica-privacidad:hover {
+  color: var(--color-principal);
+}
+.politica-privacidad,
+.derechos-reservados,
+.pie-pagina,
+.logo-pie {
+  justify-content: center;
+  align-items: flex-start;
+}
